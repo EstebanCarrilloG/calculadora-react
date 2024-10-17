@@ -12,12 +12,13 @@ function App() {
     setInput(input + val);
   };
   const calcularResultado = () => {
-    let re = /^\d+([+\-*/]\d+)*$/g;
+    let re = /^[+-]?\d+(\.\d+)?([+\-*/]\d+(\.\d+)?)*$/g;
+    console.log(typeof(input));
 
     try {
       input !== ""
         ? input.match(re) !== null
-          ? setInput(evaluate(input))
+          ? setInput(String(evaluate(input)))
           : setInput("Error")
         : setInput("");
     } catch (error) {
@@ -26,7 +27,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App container">
       <div className="contenedor-calculadora">
         <Pantalla input={input} />
         <div className="fila">
