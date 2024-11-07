@@ -4,10 +4,10 @@ import '../hojas-de-estilos/Boton.css'
 function Boton(props) {
 
     const esoperador = valor =>{
-        return isNaN(valor) && (valor != '.') && (valor != '=')
+        return isNaN(valor) && (valor !== '.') && (valor !== '=')
     }
     return(
-        <div 
+        <div id={props.id}
         onClick={() => props.manejarClic(props.children)}
             className={`boton-contenedor ${esoperador(props.children) ? 'operador' : null}`.trimEnd()}>
             {props.children}

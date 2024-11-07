@@ -2,7 +2,7 @@ import React from "react";
 import '../hojas-de-estilos/BotonClear.css'
 
 const BotonClear = (props) =>(
-    <div 
+    <div id={props.id}
     onClick={props.manejarClear}
     className="boton-clear">
         {props.children}

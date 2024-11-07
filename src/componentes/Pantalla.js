@@ -1,9 +1,9 @@
 import React from "react";
 import '../hojas-de-estilos/Pantalla.css'
 
-const Pantalla =({input})=>(
-    <div className="input">
-        {input}
+const Pantalla =({input, id})=>(
+    <div className="input" id={id}> 
+        {input ? input : "0"}
     </div>
     );
 
